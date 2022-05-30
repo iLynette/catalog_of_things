@@ -23,4 +23,10 @@ class Item
     @label = label
     label.add_label(self) unless label.items.include? self
   end
+
+  def can_be_archived?
+    now = Time.now.year
+    years = now - publish_date
+    years > 10
+  end
 end
