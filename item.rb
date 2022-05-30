@@ -11,8 +11,12 @@ class Item
 
   def add_genre(genre)
     @genre = genre
-    genre.add_item(self) unless genre.items.include(self)
+    genre.add_item(self) unless genre.items.include? self
   end
 
-  
+  def add_author(author)
+    @author = author
+    author.add_item(author) unless author.items.include? self
+  end
+
 end
