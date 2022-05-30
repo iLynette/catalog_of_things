@@ -8,4 +8,9 @@ class Genre < Item
     @id = id.Random.rand(1..1000)
     @name = name
   end
+
+  def add_item(item)
+    @items << item
+    item.genre = self
+  end
 end
