@@ -10,11 +10,6 @@ class Item
     @label = nil
   end
 
-  def author(author)
-    @author = author
-    @author.add_item(self) unless @author.items_list.include?(self)
-  end
-
   def move_to_archive
     @archived && can_be_archived
   end
