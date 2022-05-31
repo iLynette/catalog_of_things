@@ -17,4 +17,10 @@ describe Label do
       expect(@label.title).to eq 'Title'
     end
   end
+
+  describe '#color' do
+    it 'detects the color of lable' do
+      expect(@label.color).to eq 'Color'
+    end
+  end
 end
