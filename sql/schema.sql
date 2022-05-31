@@ -28,6 +28,8 @@ CREATE TABLE music_album(
   id INT GENERATED ALWAYS AS IDENTITY,
   publish_date DATE,
   on_spotify BOOLEAN,
-  archived BOOLEAN
+  archived BOOLEAN,
+  genre_id INTEGER,
   PRIMARY KEY(id)
+  FOREIGN KEY(genre_id) REFERENCES genre(id)
 )
