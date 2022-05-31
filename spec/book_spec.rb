@@ -23,4 +23,10 @@ describe Book do
       expect(@book.cover_state).to eq 'Cover state'
     end
   end
+
+  describe '#publish_date' do
+    it 'detects the right publish_date' do
+      expect(@book.publish_date).to eq 'Publish date'
+    end
+  end
 end
