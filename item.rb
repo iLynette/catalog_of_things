@@ -1,6 +1,6 @@
 class Item
   attr_accessor :publish_date
-  attr_reader :archived, :id, :genre, :label, :author, :source 
+  attr_reader :archived, :id, :genre, :label, :author
 
   def initialize(archived:false, publish_date, id: Random.rand(1..1000))
     super()
