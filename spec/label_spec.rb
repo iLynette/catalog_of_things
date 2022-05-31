@@ -13,13 +13,13 @@ describe Label do
   end
 
   describe '#title' do
-    it 'detects the title of lable' do
+    it 'detects the title of label' do
       expect(@label.title).to eq 'Title'
     end
   end
 
   describe '#color' do
-    it 'detects the color of lable' do
+    it 'detects the color of label' do
       expect(@label.color).to eq 'Color'
     end
   end
