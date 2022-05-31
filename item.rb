@@ -10,7 +10,7 @@ class Item
     @label = nil
   end
 
-  def genre(genre)
+  def add_genre(genre)
     @genre = genre
     genre.add_item(self) unless genre.items.include? self
   end
