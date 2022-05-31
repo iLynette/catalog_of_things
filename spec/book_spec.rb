@@ -11,4 +11,10 @@ describe Book do
       @book.should be_an_instance_of Book
     end
   end
+
+  describe '#publisher' do
+    it 'detects the right publisher' do
+      expect(@book.publisher).to eq 'Publisher'
+    end
+  end
 end
