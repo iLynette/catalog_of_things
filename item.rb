@@ -7,6 +7,7 @@ class Item
     @id = id || Random.rand(1..1000)
     @archived = archived
     @publish_date = publish_date
+    @label = nill
   end
 
   def move_to_archive
