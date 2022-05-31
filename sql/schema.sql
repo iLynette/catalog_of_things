@@ -17,3 +17,19 @@ CREATE TABLE book(
   FOREIGN KEY (label_id) REFERENCES label(id),
   PRIMARY KEY(id)
 );
+
+CREATE TABLE genre(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(255),
+  PRIMARY KEY(id)
+)
+
+CREATE TABLE music_album(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  publish_date DATE,
+  on_spotify BOOLEAN,
+  archived BOOLEAN,
+  genre_id INTEGER,
+  PRIMARY KEY(id)
+  FOREIGN KEY(genre_id) REFERENCES genre(id)
+)
