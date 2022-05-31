@@ -17,3 +17,8 @@ CREATE TABLE book(
   FOREIGN KEY (label_id) REFERENCES label(id),
   PRIMARY KEY(id)
 );
+
+CREATE TABLE genre(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(255),
+)
