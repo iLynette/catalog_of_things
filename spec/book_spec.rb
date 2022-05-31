@@ -17,4 +17,10 @@ describe Book do
       expect(@book.publisher).to eq 'Publisher'
     end
   end
+
+  describe '#cover_state' do
+    it 'detects the right cover_state' do
+      expect(@book.cover_state).to eq 'Cover state'
+    end
+  end
 end
