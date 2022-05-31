@@ -10,6 +10,11 @@ class Item
     @label = nil
   end
 
+  def genre(genre)
+    @genre = genre
+    genre.add_item(self) unless genre.items.include? self
+  end
+
   def move_to_archive
     @archived && can_be_archived
   end
