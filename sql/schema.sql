@@ -8,7 +8,7 @@ CREATE TABLE label(
 );
 
 CREATE TABLE book(
-  id INT,
+  id INT GENERATED ALWAYS AS IDENTITY,
   publisher VARCHAR(50),
   cover_state VARCHAR(15),
   publish_date DATE,
