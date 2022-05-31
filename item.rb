@@ -1,6 +1,6 @@
 class Item
   attr_accessor :publish_date
-  attr_reader :archived, :id, :genre, :label, :author
+  attr_reader :archived, :id, :genre, :label, :author, 
 
   def initialize(archived:false, publish_date, id)
     super()
@@ -21,7 +21,7 @@ class Item
 
   def add_label(label)
     @label = label
-    label.add_label(self) unless label.items.include? self
+    label.add_item(self) unless label.items.include? self
   end
   
   def move_to_archive
@@ -29,7 +29,7 @@ class Item
   end
 
   private 
-  
+
   def can_be_archived?
     now = Time.now.year
     years = now - publish_date
