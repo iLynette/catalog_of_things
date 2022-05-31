@@ -44,7 +44,7 @@ CREATE TABLE author (
 CREATE TABLE game (
     id INTEGER GENERATED ALWAYS AS IDENTITY,
     publish_date DATE,
-    archieved BOOLEAN,
+    archived BOOLEAN,
     multiplayer BOOLEAN,
     last_played_at DATE,
     author_id INTEGER,
