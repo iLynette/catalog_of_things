@@ -77,7 +77,18 @@ class App
   end
 
   def list_music_albums
-    
+    if @music_album.empty?
+      puts
+      puts 'Please add music album first!!'
+    else
+      @music_album.each do |music|
+        puts
+        puts "publish year(eg. 1945): #{music.publish_date}"
+        puts "Available on spotify: #{music.on_spotify}"
+        puts "Archive state: #{music.archived}"
+        puts 
+      end
+    end
   end
 
   def add_publish_date
