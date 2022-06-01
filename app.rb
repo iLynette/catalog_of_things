@@ -44,8 +44,9 @@ class App
   def genre_store
     [
       {name: 'Afropop'}
-      {name: 'Lingala'}
       {name: 'kenyan'}
+      {name: 'Bollywood'}
+      {name: 'Lingala'}
       {name: 'Amapiano'}
       {name: 'benga'}
       {name: 'Bongo'}
@@ -58,6 +59,7 @@ class App
       {name: 'Rock'}
       {name: 'Gospel'}
       {name: 'Electronic'}
+      {name: 'k-pop'}
     ]
   end
 
