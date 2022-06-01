@@ -53,6 +53,12 @@ class App
     %w[Y N].include?(spotify.capitalize) ? spotify.capitalize : add_on_spotify
   end
 
+  def create_archived
+    print 'is the music archived?[Y/N]'
+    music_archived = gets.chomp
+    %w[Y N].include?(music_archived.capitalize) ? music_archived.capitalize : create_archived
+  end
+
   def display_list_a(user_input)
     case user_input
     when '1'
