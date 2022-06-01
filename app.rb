@@ -20,6 +20,11 @@ class App
     @labels = []
     @authors = []
     @user_input = gets.chomp
+
+    genre_store.each do |item|
+      genre = Genre.new(item[:name])
+      @genre << genre
+    end
   end
 
   def prompt
@@ -43,24 +48,36 @@ class App
 
   def genre_store
     [
-      {name: 'Afropop'}
-      {name: 'kenyan'}
-      {name: 'Bollywood'}
-      {name: 'Lingala'}
-      {name: 'Amapiano'}
-      {name: 'benga'}
-      {name: 'Bongo'}
-      {name: 'Afro-jazz'}
-      {name: 'Hip-hop'}
-      {name: 'world Pop'}
-      {name: 'world Jazz'}
-      {name: 'country'}
-      {name: 'RnB'}
-      {name: 'Rock'}
-      {name: 'Gospel'}
-      {name: 'Electronic'}
+      {name: 'Afropop'},
+      {name: 'kenyan'},
+      {name: 'Bollywood'},
+      {name: 'Lingala'},
+      {name: 'Amapiano'},
+      {name: 'benga'},
+      {name: 'Bongo'},
+      {name: 'Afro-jazz'},
+      {name: 'Hip-hop'},
+      {name: 'world Pop'},
+      {name: 'world Jazz'},
+      {name: 'country'},
+      {name: 'RnB'},
+      {name: 'Rock'},
+      {name: 'Gospel'},
+      {name: 'Electronic'},
       {name: 'k-pop'}
     ]
+  end
+
+  def list_genres
+    puts 'Available genres'
+    puts
+    @genre.each_with_index do |genre, i|
+      puts "#{i +1}) #{genre.name}"
+    end
+  end
+
+  def list_music_albums
+    
   end
 
   def add_publish_date
@@ -86,10 +103,6 @@ class App
     on_spotify = add_on_spotify == 'Y'
     archived = create_archived == 'Y'
     [publish_date, on_spotify, archived]
-  end
-
-  def add_genre(genre, item)
-    return if genre
   end
 
   def create_album
@@ -140,9 +153,9 @@ class App
   def run
     loop do
       case user_input
-      when '1', '2', '3', '4,'
+      when '1', '2', '3', '4'
         display_list_a(user_input)
-      when '5', '6', '7',
+      when '5', '6', '7'
         display_list_b(user_input)
       when '8', '9', '10', '11'
         create_things(user_input)
