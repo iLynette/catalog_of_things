@@ -8,4 +8,16 @@ module Storage
     end
     albums
   end
+
+    def write_music(musics)
+    temp_files = []
+    musics.each do |music|
+      temp_files.push({
+        publish_date: music.publish_date,
+        on_spotify: music.on_spotify,
+        archived: music.archived
+      })
+    end
+    File.write('./data/music.json', JSON.generate(temp_files).to_s)
+  end
 end
