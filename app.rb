@@ -41,6 +41,19 @@ class App
     puts 'select an option: '
   end
 
+  def hash_genre
+    [
+      {name: 'Afropop'}
+      {name: 'Lingala'}
+      {name: 'kenyan'}
+      {name: 'Amapiano'}
+      {name: 'benga'}
+      {name: 'Bongo'}
+      {name: 'Afro-jazz'}
+      {name: 'Rhumba'}
+    ]
+  end
+
   def add_publish_date
     print 'Publish Date: '
     publish_date = gets.chomp
@@ -66,10 +79,15 @@ class App
     [publish_date, on_spotify, archived]
   end
 
+  def add_genre(genre, item)
+    return if genre
+  end
+
   def create_album
     publish_date, on_spotify, archived = music_album_info
     music = MusicAlbum.new(on_spotify, publish_date, archived)
     @music_album << music
+
     puts "Music Album created successfully"
   end
 
