@@ -63,4 +63,17 @@ class App
         list_sources
       end
   end
+
+    def create_things(user_input)
+    case user_input
+    when '9'
+      create_book
+    when '10'
+      create_album
+    when '11'
+      create_movie
+    when '12'
+      create_game
+    end
+  end
 end
