@@ -31,12 +31,11 @@ class App
     5 List all genres
     6 List all labels
     7 List all authors
-    8 List all sources
-    9 Add a book
-    10 Add a music album
-    11 Add a movie
-    12 Add a game
-    13 exit app
+    8 Add a book
+    9 Add a music album
+    10 Add a movie
+    11 Add a game
+    12 exit app
     '
     puts ' '
     puts 'select an option: '
@@ -63,20 +62,18 @@ class App
       list_lables
     when '7'
       list authors
-    when '8'
-      list_sources
     end
   end
 
   def create_things(user_input)
     case user_input
-    when '9'
+    when '8'
       create_book
-    when '10'
+    when '9'
       create_album
-    when '11'
+    when '10'
       create_movie
-    when '12'
+    when '11'
       create_game
     end
   end
@@ -86,11 +83,11 @@ class App
       case user_input
       when '1', '2', '3', '4,'
         display_list_a(user_input)
-      when '5', '6', '7', '8'
+      when '5', '6', '7',
         display_list_b(user_input)
-      when '9', '10', '11', '12'
+      when '8', 9', '10', '11'
         create_things(user_input)
-      when '13'
+      when '12'
         puts 'Thank you for using the catalog of things app'
         exit(true)
       else
