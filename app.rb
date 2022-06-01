@@ -76,4 +76,26 @@ class App
       create_game
     end
   end
+
+  def run
+    loop do
+      case user_input
+      when '1', '2', '3', '4,', '5', '6', '7', '8'
+        display_list(user_input)
+        when '9', '10', '11', '12'
+          create_things(user_input)
+        when '13' 
+          puts 'Thank you for using the catalog of things app'
+          exit(true)
+        else
+          puts "\nWrong Input \"#{user_input}\"!"
+          puts "Please try these available inputs"
+          prompt
+          @user_input = gets.chomp
+          run
+        end
+        prompt
+        @user_input = gets.chomp
+      end
+  end
 end
