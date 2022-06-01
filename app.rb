@@ -54,7 +54,7 @@ class App
   end
 
   def create_archived
-    print 'is the music archived?[Y/N]'
+    print 'is the music archived?[Y/N]: '
     music_archived = gets.chomp
     %w[Y N].include?(music_archived.capitalize) ? music_archived.capitalize : create_archived
   end
@@ -62,7 +62,15 @@ class App
   def music_album_info
     publish_date = add_publish_date
     on_spotify = add_on_spotify == 'Y'
+    archived = create_archived == 'Y'
     [publish_date, on_spotify, archived]
+  end
+
+  def create_album
+    publish_date, on_spotify, archived = music_album_info
+    music = MusicAlbum.new(on_spotify, publish_date, archived)
+    @music_album << music
+    puts "Music Album created successfully"
   end
 
   def display_list_a(user_input)
