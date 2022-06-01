@@ -41,7 +41,7 @@ class App
     puts 'select an option: '
   end
 
-  def hash_genre
+  def genre_store
     [
       {name: 'Afropop'}
       {name: 'Lingala'}
@@ -50,7 +50,14 @@ class App
       {name: 'benga'}
       {name: 'Bongo'}
       {name: 'Afro-jazz'}
-      {name: 'Rhumba'}
+      {name: 'Hip-hop'}
+      {name: 'world Pop'}
+      {name: 'world Jazz'}
+      {name: 'country'}
+      {name: 'RnB'}
+      {name: 'Rock'}
+      {name: 'Gospel'}
+      {name: 'Electronic'}
     ]
   end
 
