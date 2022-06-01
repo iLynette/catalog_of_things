@@ -5,9 +5,12 @@ require './item'
 require './label'
 require './music_album'
 require './genre'
+require './storage.rb'
 
 class App
   attr_accessor :user_input
+
+include Storage
 
   def initialize
     puts 'Welcome to the Catalog of Things App!'
@@ -77,13 +80,14 @@ class App
   end
 
   def list_music_albums
-    if @music_album.empty?
+    albums = read_music
+    if albums.empty?
       puts
       puts 'Please add music album first!!'
     else
-      @music_album.each do |music|
+      albums.each do |music|
         puts
-        puts "publish year(eg. 1945): #{music.publish_date}"
+        puts "publish year: #{music.publish_date}"
         puts "Available on spotify: #{music.on_spotify}"
         puts "Archive state: #{music.archived}"
         puts 
@@ -92,9 +96,15 @@ class App
   end
 
   def add_publish_date
-    print 'Publish Date: '
+    print 'Publish Date(eg 2004): '
     publish_date = gets.chomp
     publish_date.empty? ? add_publish_date : publish_date
+  end
+
+  def add_album_name
+    print 'Album Name: '
+    name = gets.chomp
+    name.empty? ? add_album_name : name
   end
 
   def add_on_spotify
@@ -110,18 +120,18 @@ class App
   end
 
   def music_album_info
+    name = add_album_name
     publish_date = add_publish_date
     on_spotify = add_on_spotify == 'Y'
     archived = create_archived == 'Y'
-    [publish_date, on_spotify, archived]
+    [name, publish_date, on_spotify, archived]
   end
 
   def create_album
     publish_date, on_spotify, archived = music_album_info
-    music = MusicAlbum.new(on_spotify, publish_date, archived)
+    music = MusicAlbum.new(name, on_spotify, publish_date, archived)
     @music_album << music
-
-    puts "Music Album created successfully"
+    write_music(@music_album)
   end
 
   def display_list_a(user_input)
