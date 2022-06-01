@@ -42,4 +42,25 @@ class App
     puts ' '
     puts 'select an option: '
   end
+
+  def display_list(user_input)
+    case user_input
+      when '1'
+        list_books
+      when '2'
+        list_music_albums
+      when '3'
+        list_movies
+      when '4'
+        list_games
+      when '5'
+        list_genres
+      when '6'
+        list_lables
+      when '7'
+        list authors
+      when '8'
+        list_sources
+      end
+  end
 end
