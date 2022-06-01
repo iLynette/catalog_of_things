@@ -24,8 +24,9 @@ describe Label do
     end
   end
   it 'should detect the label items' do
-    @book = Book.new 'Publisher', 'Cover state', 'Publish date'
+    book = Book.new 'Publisher', 'Cover state', 'Publish date'
     @label.add_item(book)
     expect(@label.items.include?(book)).to eq true
     expect(book.label).to eq @label
+  end
 end
