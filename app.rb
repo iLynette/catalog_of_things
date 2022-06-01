@@ -47,6 +47,12 @@ class App
     publish_date.empty? ? add_publish_date : publish_date
   end
 
+  def add_on_spotify
+    print 'is it on spotify?[Y/N]: '
+    spotify = gets.chomp
+    %w[Y N].include?(spotify.capitalize) ? spotify.capitalize : add_on_spotify
+  end
+
   def display_list_a(user_input)
     case user_input
     when '1'
