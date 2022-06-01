@@ -59,6 +59,12 @@ class App
     %w[Y N].include?(music_archived.capitalize) ? music_archived.capitalize : create_archived
   end
 
+  def music_album_info
+    publish_date = add_publish_date
+    on_spotify = add_on_spotify == 'Y'
+    [publish_date, on_spotify, archived]
+  end
+
   def display_list_a(user_input)
     case user_input
     when '1'
