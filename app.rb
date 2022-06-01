@@ -41,6 +41,12 @@ class App
     puts 'select an option: '
   end
 
+  def add_publish_date
+    print 'Publish Date: '
+    publish_date = gets.chomp
+    publish_date.empty? ? add_publish_date : publish_date
+  end
+
   def display_list_a(user_input)
     case user_input
     when '1'
