@@ -1,10 +1,11 @@
 require 'json'
+require './music_album.rb'
 
 module Storage
   def read_music
     albums = []
-    JSON.parse(File.read(./data/music.json)).each do |music|
-      albums.push(Music.new(music['publish_date'], music['on_spotify'], music['archived']))
+    JSON.parse(File.read("./data/music.json")).each do |music|
+      albums.push(MusicAlbum.new(music['on_spotify'], music['publish_date'], music['archived']))
     end
     albums
   end
@@ -19,5 +20,6 @@ module Storage
       })
     end
     File.write('./data/music.json', JSON.generate(temp_files).to_s)
+    puts "Music Album created successfully"
   end
 end

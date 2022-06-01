@@ -6,7 +6,7 @@ class Item
     super()
     @id = id
     @archived = archived
-    @publish_date = publish_date.to_i
+    @publish_date = publish_date
     @label = nil
   end
 
@@ -21,7 +21,7 @@ class Item
 
   def can_be_archived?
     now = Time.now.year
-    years = now - publish_date
+    years = now - publish_date.to_i
     years > 10
   end
 end
