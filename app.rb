@@ -85,7 +85,7 @@ class App
         display_list_a(user_input)
       when '5', '6', '7',
         display_list_b(user_input)
-      when '8', 9', '10', '11'
+      when '8', '9', '10', '11'
         create_things(user_input)
       when '12'
         puts 'Thank you for using the catalog of things app'
