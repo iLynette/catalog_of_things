@@ -6,12 +6,11 @@ require './label'
 require './music_album'
 require './genre'
 
-
 class App
   attr_accessor :user_input
 
   def initialize
-    puts 'Welcome to the catalog of things app'
+    puts 'Welcome to the Catalog of Things App!'
     prompt
     @books = []
     @music_album = []
@@ -19,7 +18,7 @@ class App
     @games = []
     @genre = []
     @labels = []
-    @authors =[]
+    @authors = []
     @user_input = gets.chomp
   end
 
@@ -43,28 +42,33 @@ class App
     puts 'select an option: '
   end
 
-  def display_list(user_input)
+  def display_list_a(user_input)
     case user_input
-      when '1'
-        list_books
-      when '2'
-        list_music_albums
-      when '3'
-        list_movies
-      when '4'
-        list_games
-      when '5'
-        list_genres
-      when '6'
-        list_lables
-      when '7'
-        list authors
-      when '8'
-        list_sources
-      end
+    when '1'
+      list_books
+    when '2'
+      list_music_albums
+    when '3'
+      list_movies
+    when '4'
+      list_games
+    end
   end
 
-    def create_things(user_input)
+  def display_list_b(user_input)
+    case user_input
+    when '5'
+      list_genres
+    when '6'
+      list_lables
+    when '7'
+      list authors
+    when '8'
+      list_sources
+    end
+  end
+
+  def create_things(user_input)
     case user_input
     when '9'
       create_book
@@ -80,22 +84,24 @@ class App
   def run
     loop do
       case user_input
-      when '1', '2', '3', '4,', '5', '6', '7', '8'
-        display_list(user_input)
-        when '9', '10', '11', '12'
-          create_things(user_input)
-        when '13' 
-          puts 'Thank you for using the catalog of things app'
-          exit(true)
-        else
-          puts "\nWrong Input \"#{user_input}\"!"
-          puts "Please try these available inputs"
-          prompt
-          @user_input = gets.chomp
-          run
-        end
+      when '1', '2', '3', '4,'
+        display_list_a(user_input)
+      when '5', '6', '7', '8'
+        display_list_b(user_input)
+      when '9', '10', '11', '12'
+        create_things(user_input)
+      when '13'
+        puts 'Thank you for using the catalog of things app'
+        exit(true)
+      else
+        puts "\nWrong Input \"#{user_input}\"!"
+        puts 'Please try these available inputs'
         prompt
         @user_input = gets.chomp
+        run
       end
+      prompt
+      @user_input = gets.chomp
+    end
   end
 end
