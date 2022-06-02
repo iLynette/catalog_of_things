@@ -4,7 +4,7 @@ require './label'
 class Booklist
     def initialize()
         @books = []
-        @labels = [{title: 'title', color: 'Black'}, {title: 'title', color: 'Red'}]
+        @labels = [{title: 'Fiction', color: 'Black'}, {title: 'Non-fiction', color: 'Red'}]
     end
 
     def list_all_books
