@@ -14,7 +14,7 @@ module Storage
     temp_files = []
     musics.each do |music|
       temp_files.push({
-                        album_genre: music[:album_name],
+                        album_name: music[:album_name],
                         publish_date: music[:publish_date],
                         on_spotify: music[:on_spotify],
                         archived: music[:archived],
