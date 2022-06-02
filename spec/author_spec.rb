@@ -14,5 +14,10 @@ describe Author do
             name = @author.first_name
             expect(name).to eq 'Tufahel'
         end
+
+        it 'should have a last_name instance variable' do
+            name = @author.last_name
+            expect(name).to eq 'Ahmed'
+        end
     end
 end
