@@ -26,12 +26,11 @@ CREATE TABLE genre(
 
 CREATE TABLE music_album(
   id INT GENERATED ALWAYS AS IDENTITY,
-  publish_date DATE,
+  name VARCHAR(255),
   on_spotify BOOLEAN,
+  publish_date DATE,
   archived BOOLEAN,
-  genre_id INTEGER,
   PRIMARY KEY(id)
-  FOREIGN KEY(genre_id) REFERENCES genre(id)
 );
 
 CREATE TABLE author (
