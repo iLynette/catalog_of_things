@@ -19,3 +19,9 @@ def update_data(file, data)
   json_data = JSON.generate(data, opts)
   File.write("./data/#{file}.json", json_data)
 end
+
+def populate_books
+  get_data('books').map do |book|
+    Book.new(book['publisher'], book['cover_state'], book['publish_date'])
+  end
+end
