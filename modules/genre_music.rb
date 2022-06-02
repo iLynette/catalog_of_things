@@ -5,24 +5,18 @@ module GenreMusic
   def genre_store
     [
       { name: 'Afropop' },
-      { name: 'Manga comics' },
       { name: 'Bollywood music' },
-      { name: 'Bollywood movies' },
-      { name: 'Thriller' },
       { name: 'Amapiano' },
-      { name: 'Comedy' },
       { name: 'Afro-jazz' },
-      { name: 'Afro-cinema' },
       { name: 'Pop' },
-      { name: 'Documentary' },
-      { name: 'Religious Books' },
       { name: 'RnB' },
-      { name: 'Romance' },
       { name: 'Gospel' },
       { name: 'Electronic' },
-      { name: 'Non-fiction' },
-      { name: 'Self-help books' },
-      { name: 'Fiction' }
+      { name: 'Rock'},
+      { name: 'Uk Hip-hop'},
+      { name: 'Roots'},
+      { name: 'Reggae'},
+      { name: 'Classics'}
     ]
   end
 
@@ -57,12 +51,6 @@ module GenreMusic
     publish_date.empty? ? add_publish_date : publish_date
   end
 
-  def add_album_name
-    print 'Album Name: '
-    name = gets.chomp
-    name.empty? ? add_album_name : name
-  end
-
   def add_on_spotify
     print 'is it on spotify?[Y/N]: '
     spotify = gets.chomp
@@ -75,8 +63,26 @@ module GenreMusic
     %w[Y N].include?(music_archived.capitalize) ? music_archived.capitalize : create_archived
   end
 
+  def add_genre
+    puts "Please select a music Genre"
+    @genre.each_with_index do |genre, i|
+      puts "#{i + 1}) #{genre.name}"
+    end
+    print "Please select genre: "
+    genre_num = gets.chomp
+    indx = genre_num.to_i - 1
+    genre_name = nil
+
+    @genre.each_with_index do |genre, i|
+      if indx == i
+        genre_name = genre.name
+      end
+    end
+    genre_name
+  end
+
   def music_album_info
-    name = add_album_name
+    name = add_genre
     publish_date = add_publish_date
     on_spotify = add_on_spotify == 'Y'
     archived = create_archived == 'Y'
@@ -86,7 +92,8 @@ module GenreMusic
   def create_album
     name, publish_date, on_spotify, archived = music_album_info
     music = MusicAlbum.new(name, on_spotify, publish_date, archived)
-    @music_album << music
+    music_genre = {album_name: music.name, on_spotify: music.on_spotify, publish_date: music.publish_date, archived: music.archived}
+    @music_album << music_genre
     write_music(@music_album)
   end
 end

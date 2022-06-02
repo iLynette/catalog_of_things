@@ -14,10 +14,10 @@ module Storage
     temp_files = []
     musics.each do |music|
       temp_files.push({
-                        album_name: music.name,
-                        publish_date: music.publish_date,
-                        on_spotify: music.on_spotify,
-                        archived: music.archived
+                        album_genre: music[:album_name],
+                        publish_date: music[:publish_date],
+                        on_spotify: music[:on_spotify],
+                        archived: music[:archived],
                       })
     end
     File.write('./data/music.json', JSON.generate(temp_files).to_s)
