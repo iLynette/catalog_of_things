@@ -12,11 +12,11 @@ module GenreMusic
       { name: 'RnB' },
       { name: 'Gospel' },
       { name: 'Electronic' },
-      { name: 'Rock'},
-      { name: 'Uk Hip-hop'},
-      { name: 'Roots'},
-      { name: 'Reggae'},
-      { name: 'Classics'}
+      { name: 'Rock' },
+      { name: 'Uk Hip-hop' },
+      { name: 'Roots' },
+      { name: 'Reggae' },
+      { name: 'Classics' }
     ]
   end
 
@@ -64,13 +64,13 @@ module GenreMusic
   end
 
   def add_genre
-    puts "Please select a music Genre!!"
+    puts 'Please select a music Genre!!'
     puts
     @genre.each_with_index do |genre, i|
       puts "#{i + 1}) #{genre.name}"
     end
     puts
-    print "Please select genre: "
+    print 'Please select genre: '
     genre_num = gets.chomp
     indx = genre_num.to_i - 1
     genre_name = nil
@@ -78,6 +78,8 @@ module GenreMusic
     @genre.each_with_index do |genre, i|
       if indx == i
         genre_name = genre.name
+      else
+        genre_name
       end
     end
     genre_name
@@ -94,7 +96,8 @@ module GenreMusic
   def create_album
     name, publish_date, on_spotify, archived = music_album_info
     music = MusicAlbum.new(name, on_spotify, publish_date, archived)
-    music_genre = {album_name: music.name, on_spotify: music.on_spotify, publish_date: music.publish_date, archived: music.archived}
+    music_genre = { album_name: music.name, on_spotify: music.on_spotify, publish_date: music.publish_date,
+                    archived: music.archived }
     @music_album << music_genre
     write_music(@music_album)
   end
