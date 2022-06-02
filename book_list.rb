@@ -4,6 +4,7 @@ require './label'
 class Booklist
     def initialize()
         @books = []
+        @labels = [{title: 'title', color: 'Black'}, {title: 'title', color: 'Red'}]
     end
 
     def list_all_books
@@ -25,7 +26,7 @@ class Booklist
         date = gets.chomp
         puts 'Which label should the book have'
         book = Book.new(publisher, state_selection, date)
-        new_book = { publisher: publisher, cover_state: state_selection, publish_date: date}
+        new_book = { publisher: publisher, cover_state: state_selection, publish_date: date, label: label}
         @books << new_book
         puts 'Book was added successfully'
       end
