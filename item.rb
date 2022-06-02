@@ -10,7 +10,7 @@ class Item
     @publish_date = publish_date
     @label = nil
   end
-  
+
   # rubocop:enable Style/OptionalBooleanParameter
   def add_genre(genre)
     @genre = genre
