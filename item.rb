@@ -15,6 +15,11 @@ class Item
     genre.add_item(self) unless genre.items.include? self
   end
 
+  def add_label(label)
+    @label = label
+    
+  end
+
   def move_to_archive
     @archived && can_be_archived
   end
