@@ -31,7 +31,7 @@ module GenreMusic
   def list_music_albums
     albums = read_music
     if albums.empty?
-      puts
+      puts read_music
       puts 'Please add music album first!!'
     else
       albums.each do |music|
@@ -64,10 +64,12 @@ module GenreMusic
   end
 
   def add_genre
-    puts "Please select a music Genre"
+    puts "Please select a music Genre!!"
+    puts
     @genre.each_with_index do |genre, i|
       puts "#{i + 1}) #{genre.name}"
     end
+    puts
     print "Please select genre: "
     genre_num = gets.chomp
     indx = genre_num.to_i - 1
