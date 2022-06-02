@@ -6,7 +6,7 @@ describe Game do
     end
 
     context 'initialize method' do
-        it 'instance of Game' do
+        it 'game is an instance of Game' do
             expect(@game).to be_an_instance_of Game
         end
         it 'should have multiplayer instance variable' do
