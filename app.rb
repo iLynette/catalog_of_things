@@ -6,6 +6,8 @@ require './label'
 require './music_album'
 require './genre'
 require './book_list'
+require 'json'
+require './data/operations'
 
 class App
   attr_accessor :user_input
