@@ -38,5 +38,11 @@ class Booklist
         when 'n' then state_result = 'bad'
         end
         state_result
+      end
+
+      def populate_label
+        @labels.each do |label|
+            Label.new(label[:title], label[:color])
+        end
       end   
 end
