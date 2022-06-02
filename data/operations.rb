@@ -25,3 +25,9 @@ def populate_books
     Book.new(book['publisher'], book['cover_state'], book['publish_date'])
   end
 end
+
+def populate_labels
+    get_data('labels').map do |label|
+      Label.new(label[:title], label[:color])
+    end
+end
