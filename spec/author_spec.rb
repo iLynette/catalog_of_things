@@ -25,7 +25,7 @@ describe Author do
   context 'add item' do
     it 'should add an item' do
       author = Author.new('Tufahel', 'Ahmed')
-      item = Item.new('2021', false)
+      item = Item.new('2021')
       author.add_item(item)
       expect(author.items).to include(item)
       expect(item.author).to be(author)
