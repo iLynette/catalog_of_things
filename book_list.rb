@@ -6,6 +6,7 @@ class Booklist
         @books = []
     end
 
+
     def add_book
         print 'Publisher: '
         publisher = gets.chomp
@@ -19,5 +20,14 @@ class Booklist
         new_book = { publisher: publisher, cover_state: state_selection, publish_date: date}
         @books << new_book
         puts 'Book was added successfully'
-      end   
+      end
+
+      def cover_selection(state)
+        state_result = 'good'
+        case state
+        when 'y' then state_result = 'good'
+        when 'n' then state_result = 'bad'
+        end
+        state_result
+      end  
 end
