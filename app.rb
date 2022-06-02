@@ -52,22 +52,23 @@ include Storage
   def genre_store
     [
       {name: 'Afropop'},
-      {name: 'kenyan'},
       {name: 'Bollywood'},
-      {name: 'Lingala'},
+      {name: 'Thriller'},
       {name: 'Amapiano'},
       {name: 'benga'},
-      {name: 'Bongo'},
+      {name: 'Comedy'},
       {name: 'Afro-jazz'},
-      {name: 'Hip-hop'},
+      {name: 'Afro-cinema'},
       {name: 'world Pop'},
-      {name: 'world Jazz'},
-      {name: 'country'},
+      {name: 'Documentary'},
+      {name: 'Religious Books'},
       {name: 'RnB'},
-      {name: 'Rock'},
+      {name: 'Romance'},
       {name: 'Gospel'},
       {name: 'Electronic'},
-      {name: 'k-pop'}
+      {name: 'Non-fiction'}
+      {name: 'self-help books'}
+      {name: 'Fiction'}
     ]
   end
 
@@ -87,6 +88,7 @@ include Storage
     else
       albums.each do |music|
         puts
+        puts "Album name: #{music.name}"
         puts "publish year: #{music.publish_date}"
         puts "Available on spotify: #{music.on_spotify}"
         puts "Archive state: #{music.archived}"
@@ -128,7 +130,7 @@ include Storage
   end
 
   def create_album
-    publish_date, on_spotify, archived = music_album_info
+    name, publish_date, on_spotify, archived = music_album_info
     music = MusicAlbum.new(name, on_spotify, publish_date, archived)
     @music_album << music
     write_music(@music_album)
