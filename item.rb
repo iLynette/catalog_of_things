@@ -2,7 +2,7 @@ class Item
   attr_accessor :publish_date
   attr_reader :archived, :id, :genre, :label, :author
 
-  def initialize(publish_date, archived: false, id: rand(1..100_000))
+  def initialize(publish_date, archived, id: rand(1..100_000))
     super()
     @id = id
     @archived = archived
@@ -13,6 +13,11 @@ class Item
   def add_genre(genre)
     @genre = genre
     genre.add_item(self) unless genre.items.include? self
+  end
+
+  def label=(label)
+    @label = label
+    label.items.push(self) unless label.items.include?(self)
   end
 
   def move_to_archive
