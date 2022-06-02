@@ -14,5 +14,10 @@ class Booklist
         state_selection = cover_selection(state)
         print 'Publish date(yyyy-mm-dd): '
         date = gets.chomp
-      end  
+        puts 'Which label should the book have'
+        book = Book.new(publisher, state_selection, date)
+        new_book = { publisher: publisher, cover_state: state_selection, publish_date: date}
+        @books << new_book
+        puts 'Book was added successfully'
+      end   
 end
