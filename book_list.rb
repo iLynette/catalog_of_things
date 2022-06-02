@@ -34,7 +34,7 @@ class Booklist
     label = Label.new(title, color)
     label.add_item(book)
     desired_label[:ref] = label
-    new_book = { publisher: publisher, cover_state: state_selection, publish_date: date, label: label }
+    new_book = { publisher: publisher, cover_state: state_selection, publish_date: date, label: book.label.title }
     @books << new_book
     puts 'Book was added successfully'
   end
