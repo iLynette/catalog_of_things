@@ -9,5 +9,8 @@ describe Game do
         it 'instance of Game' do
             expect(@game).to be_an_instance_of Game
         end
+        it 'should have multiplayer instance variable' do
+            expect(@game.multiplayer).to eq true
+        end
     end
 end
