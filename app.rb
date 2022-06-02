@@ -81,9 +81,9 @@ class App
   def run
     loop do
       case user_input
-      when '1', '2', '3', '4,'
+      when '1', '2', '3', '4'
         display_list_a(user_input)
-      when '5', '6', '7',
+      when '5', '6', '7'
         display_list_b(user_input)
       when '8', '9', '10', '11'
         create_things(user_input)
