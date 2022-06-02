@@ -6,6 +6,14 @@ class Booklist
         @books = []
     end
 
+    def list_all_books
+        puts 'No books available, please add some' if @books.empty?
+        @books.each_with_index do |book, index|
+          puts ' '
+          print "Book(#{index + 1}) => Publisher: #{book[:publisher]} | label: #{book[:label]} | "
+          print "cover state: #{book[:cover_state]} | publish date: #{book[:publish_date]} "
+        end
+      end
 
     def add_book
         print 'Publisher: '
@@ -29,5 +37,5 @@ class Booklist
         when 'n' then state_result = 'bad'
         end
         state_result
-      end  
+      end   
 end
