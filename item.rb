@@ -17,7 +17,6 @@ class Item
 
   def add_label(label)
     @label = label
-
   end
 
   def move_to_archive
