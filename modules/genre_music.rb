@@ -2,28 +2,27 @@ require './music_album'
 require './genre'
 
 module GenreMusic
-
   def genre_store
     [
-      {name: 'Afropop'},
-      {name: 'Manga comics'},
-      {name: 'Bollywood music'},
-      {name: 'Bollywood movies'},
-      {name: 'Thriller'},
-      {name: 'Amapiano'},
-      {name: 'Comedy'},
-      {name: 'Afro-jazz'},
-      {name: 'Afro-cinema'},
-      {name: 'Pop'},
-      {name: 'Documentary'},
-      {name: 'Religious Books'},
-      {name: 'RnB'},
-      {name: 'Romance'},
-      {name: 'Gospel'},
-      {name: 'Electronic'},
-      {name: 'Non-fiction'},
-      {name: 'self-help books'},
-      {name: 'Fiction'}
+      { name: 'Afropop' },
+      { name: 'Manga comics' },
+      { name: 'Bollywood music' },
+      { name: 'Bollywood movies' },
+      { name: 'Thriller' },
+      { name: 'Amapiano' },
+      { name: 'Comedy' },
+      { name: 'Afro-jazz' },
+      { name: 'Afro-cinema' },
+      { name: 'Pop' },
+      { name: 'Documentary' },
+      { name: 'Religious Books' },
+      { name: 'RnB' },
+      { name: 'Romance' },
+      { name: 'Gospel' },
+      { name: 'Electronic' },
+      { name: 'Non-fiction' },
+      { name: 'Self-help books' },
+      { name: 'Fiction' }
     ]
   end
 
@@ -31,7 +30,7 @@ module GenreMusic
     puts 'Available genres'
     puts
     @genre.each_with_index do |genre, i|
-      puts "#{i +1}) #{genre.name}"
+      puts "#{i + 1}) #{genre.name}"
     end
   end
 
@@ -47,7 +46,7 @@ module GenreMusic
         puts "publish year: #{music.publish_date}"
         puts "Available on spotify: #{music.on_spotify}"
         puts "Archive state: #{music.archived}"
-        puts 
+        puts
       end
     end
   end

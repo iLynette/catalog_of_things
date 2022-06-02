@@ -11,8 +11,8 @@ require './modules/genre_music'
 class App
   attr_accessor :user_input
 
-include Storage
-include GenreMusic
+  include Storage
+  include GenreMusic
 
   def initialize
     puts 'Welcome to the Catalog of Things App!'
@@ -50,7 +50,6 @@ include GenreMusic
     puts ' '
     puts 'select an option: '
   end
-
 
   def display_list_a(user_input)
     case user_input
