@@ -25,6 +25,7 @@ class Booklist
         print 'Publish date(yyyy-mm-dd): '
         date = gets.chomp
         puts 'Which label should the book have'
+        list_labels
         label_index = gets.chomp.to_i
         book = Book.new(publisher, state_selection, date)
         desired_label = @labels[label_index - 1]
