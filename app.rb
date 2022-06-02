@@ -7,6 +7,7 @@ require './music_album'
 require './genre'
 require './modules/music_storage'
 require './modules/genre_music'
+require './book_list'
 
 class App
   attr_accessor :user_input
@@ -17,7 +18,7 @@ class App
   def initialize
     puts 'Welcome to the Catalog of Things App!'
     prompt
-    @books = []
+    @books = Booklist.new
     @music_album = []
     @movies = []
     @games = []
@@ -54,7 +55,7 @@ class App
   def display_list_a(user_input)
     case user_input
     when '1'
-      list_books
+      @books.list_all_books
     when '2'
       list_music_albums
     when '3'
@@ -69,7 +70,7 @@ class App
     when '5'
       list_genres
     when '6'
-      list_lables
+      @books.list_labels
     when '7'
       list authors
     end
@@ -78,7 +79,7 @@ class App
   def create_things(user_input)
     case user_input
     when '8'
-      create_book
+      @books.add_book
     when '9'
       create_album
     when '10'
