@@ -5,7 +5,7 @@ require './item'
 require './label'
 require './music_album'
 require './genre'
-require './storage.rb'
+require './genreMusic Modules/music_storage'
 
 class App
   attr_accessor :user_input
@@ -52,22 +52,23 @@ include Storage
   def genre_store
     [
       {name: 'Afropop'},
-      {name: 'Bollywood'},
+      {name: 'Manga comics'},
+      {name: 'Bollywood music'},
+      {name: 'Bollywood movies'},
       {name: 'Thriller'},
       {name: 'Amapiano'},
-      {name: 'benga'},
       {name: 'Comedy'},
       {name: 'Afro-jazz'},
       {name: 'Afro-cinema'},
-      {name: 'world Pop'},
+      {name: 'Pop'},
       {name: 'Documentary'},
       {name: 'Religious Books'},
       {name: 'RnB'},
       {name: 'Romance'},
       {name: 'Gospel'},
       {name: 'Electronic'},
-      {name: 'Non-fiction'}
-      {name: 'self-help books'}
+      {name: 'Non-fiction'},
+      {name: 'self-help books'},
       {name: 'Fiction'}
     ]
   end
