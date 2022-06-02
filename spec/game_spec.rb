@@ -16,4 +16,12 @@ describe Game do
             expect(@game.last_played_at.to_s).to eq '2019'
         end
     end
+
+    context 'can_be_archived? method' do
+        it 'returns true if parent return true' do
+            game = Game.new(true, (Time.now.year - 4), (Time.now.year - 12), false)
+            result = game.send(:can_be_archived?)
+            expect(result).to be_truthy
+        end
+    end
 end
