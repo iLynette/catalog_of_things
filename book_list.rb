@@ -25,7 +25,14 @@ class Booklist
         print 'Publish date(yyyy-mm-dd): '
         date = gets.chomp
         puts 'Which label should the book have'
+        label_index = gets.chomp.to_i
         book = Book.new(publisher, state_selection, date)
+        desired_label = @labels[label_index - 1]
+        title = desired_label[:title]
+        color = desired_label[:color]
+        label = Label.new(title, color)
+        label.add_item(book)
+        desired_label[:ref] = label
         new_book = { publisher: publisher, cover_state: state_selection, publish_date: date, label: label}
         @books << new_book
         puts 'Book was added successfully'
@@ -44,5 +51,13 @@ class Booklist
         @labels.each do |label|
             Label.new(label[:title], label[:color])
         end
-      end   
+
+      end
+
+    def list_labels
+        puts 'There are no genres available in the system' if @labels.empty?
+        @labels.each_with_index do |label, index|
+          puts "#{index + 1}) title: #{label[:title]}, color: #{label[:color]}"
+        end
+      end    
 end
