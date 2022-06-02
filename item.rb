@@ -19,6 +19,11 @@ class Item
     @label = label
   end
 
+  def add_author(author)
+    @author = author
+    author.items << self unless author.items.include? self
+  def
+
   def move_to_archive
     @archived && can_be_archived
   end
