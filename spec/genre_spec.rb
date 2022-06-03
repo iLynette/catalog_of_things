@@ -26,5 +26,10 @@ describe Genre do
       @genre.add_item(@item)
       expect(@genre.items.length).to eq 1
     end
+
+    it 'an already existing item should not be added, length of item should still be ==1' do
+      @genre.add_item(@item)
+      expect(@genre.items.length).to eq 1
+    end
   end
 end
