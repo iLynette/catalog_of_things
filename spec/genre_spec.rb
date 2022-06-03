@@ -31,5 +31,9 @@ describe Genre do
       @genre.add_item(@item)
       expect(@genre.items.length).to eq 1
     end
+
+    it 'item passed into array should equal to the genre item being passed' do
+      expect(@item.genre).to eql @genre
+    end
   end
 end
