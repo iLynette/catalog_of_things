@@ -21,9 +21,12 @@ def update_data(file, data)
 end
 
 def populate_books
+  books = []
   get_data('books').map do |book|
-    Book.new(book['publisher'], book['cover_state'], book['publish_date'])
+    desired_book = Book.new(book['publisher'], book['cover_state'], book['publish_date'])
+    books.push({ publisher: desired_book.publisher, cover_state: book['state_selection'], publish_date: desired_book.publish_date, label: book['label'] })
   end
+  books
 end
 
 def populate_labels
