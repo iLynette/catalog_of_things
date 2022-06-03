@@ -31,6 +31,7 @@ class App
   end
 
   def save_data
+    add_game
     create_games
   end
 
@@ -80,8 +81,6 @@ class App
     when '8'
       create_album
     when '9'
-      add_game
-    when '10'
       save_data
     end
   end
@@ -93,7 +92,7 @@ class App
         display_list_a(user_input)
       when '4', '5', '6'
         display_list_b(user_input)
-      when '7', '8', '9',
+      when '7', '8', '9'
         create_things(user_input)
       when '10'
         puts 'Thank you for using the catalog of things app'
