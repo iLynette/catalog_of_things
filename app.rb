@@ -5,6 +5,8 @@ require './item'
 require './label'
 require './music_album'
 require './genre'
+require './modules/music_storage'
+require './modules/genre_music'
 require './book_list'
 require './modules/authors_module'
 require './modules/games_module'
@@ -19,6 +21,9 @@ class App
 
   attr_accessor :user_input
 
+  include Storage
+  include GenreMusic
+
   def initialize
     puts 'Welcome to the Catalog of Things App!'
     prompt
@@ -30,6 +35,11 @@ class App
     @labels = []
     @authors = load_authors
     @user_input = gets.chomp
+
+    genre_store.each do |item|
+      genre = Genre.new(item[:name])
+      @genre << genre
+    end
   end
 
   def save_data

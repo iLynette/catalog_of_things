@@ -2,7 +2,8 @@ class Item
   attr_accessor :publish_date
   attr_reader :archived, :id, :genre, :label, :author
 
-  def initialize(publish_date, archived: false, id: rand(1..100_000))
+  # rubocop:disable Style/OptionalBooleanParameter
+  def initialize(publish_date, archived = false, id = rand(1..100_000))
     super()
     @id = id
     @archived = archived
@@ -10,6 +11,7 @@ class Item
     @label = nil
   end
 
+  # rubocop:enable Style/OptionalBooleanParameter
   def add_genre(genre)
     @genre = genre
     genre.add_item(self) unless genre.items.include? self
@@ -30,7 +32,7 @@ class Item
 
   def can_be_archived?
     now = Time.now.year
-    years = now - publish_date
+    years = now - publish_date.to_i
     years > 10
   end
 end
