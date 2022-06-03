@@ -1,5 +1,4 @@
 require_relative '../game.rb'
-require_relative '../author.rb'
 require_relative '../item.rb'
 
 def list_games
