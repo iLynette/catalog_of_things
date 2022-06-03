@@ -4,7 +4,7 @@ require_relative '../author.rb'
 module AuthorsModule
     def load_authors
         data = []
-        file = '../data/authors.json'
+        file = './data/authors.json'
         if File.exist?(file)
             JSON.parse(File.read(file)).each do |author|
                 data.push(Author.new(author['first_name'], author['last_name']))
@@ -21,6 +21,6 @@ module AuthorsModule
         @authors.each do |author|
             data.push({first_name: author.first_name, last_name: author.last_name})
         end
-        File.write('../data/authors.json', JSON.generate(data))
+        File.write('./data/authors.json', JSON.generate(data))
     end
 end
