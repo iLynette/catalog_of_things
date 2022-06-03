@@ -20,4 +20,11 @@ describe Genre do
       expect(@genre.name).to eql 'hip-hop'
     end
   end
+
+  context 'Add an item to genre' do
+    it 'Genre item length should be == 1 after item is add' do
+      @genre.add_item(@item)
+      expect(@genre.items.length).to eq 1
+    end
+  end
 end
