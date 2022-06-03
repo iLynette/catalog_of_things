@@ -7,11 +7,17 @@ describe Genre do
     @item = Item.new 1998
   end
 
-  it 'Items should be empty' do
-    expect(@genre.items).to be_empty
-  end
+  context 'Class Object' do
+    it 'genre should be an instance of class Genre' do
+      expect(@genre).to be_instance_of Genre
+    end
 
-  it 'should return hip-hop' do
-    expect(@genre.name).to eql 'hip-hop'
+    it 'Items should be empty' do
+      expect(@genre.items).to be_empty
+    end
+
+    it 'should return hip-hop' do
+      expect(@genre.name).to eql 'hip-hop'
+    end
   end
 end
