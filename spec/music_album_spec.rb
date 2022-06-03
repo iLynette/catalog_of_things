@@ -12,4 +12,8 @@ describe MusicAlbum do
     it 'Album genre should be rap' do
     expect(@music_album.name).to eql 'rap'
   end
+
+    it 'Album on spotify should be false' do
+    expect(@music_album.on_spotify).to be_falsy
+  end
 end
