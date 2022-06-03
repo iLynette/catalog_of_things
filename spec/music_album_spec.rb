@@ -8,4 +8,8 @@ describe MusicAlbum do
   it 'should be an instance of MusicAlbum class' do
     expect(@music_album).to be_instance_of MusicAlbum
   end
+
+    it 'Album genre should be rap' do
+    expect(@music_album.name).to eql 'rap'
+  end
 end
