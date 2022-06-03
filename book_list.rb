@@ -7,6 +7,7 @@ class Booklist
   def initialize()
     @books = []
     @labels = [{ title: 'Fiction', color: 'Black' }, { title: 'Non-fiction', color: 'Red' }]
+    load_books
   end
 
   def list_all_books
@@ -43,6 +44,10 @@ class Booklist
     stored_books.push(book_data)
     update_data('books', stored_books)
     puts 'Book was added successfully'
+  end
+
+  def load_books
+    @books = populate_books
   end
 
   def cover_selection(state)
