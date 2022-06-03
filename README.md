@@ -6,7 +6,7 @@
 > We designed a console app that would let users add books, games and music albums as well as list the aforementioned items. Everything was based on a descriptive UML class diagram. The data is saved in JSON files, but we've also created a database schema of the same.
 
 ## UML Diagram
-![screenshot](https://raw.githubusercontent.com/microverseinc/curriculum-ruby/main/group-capstone/images/catalog_of_my_things.png?token=GHSAT0AAAAAABRJEX7N6TTAQSDO7M3LQJ4AYU2DGEQ)
+![UML](https://raw.githubusercontent.com/microverseinc/curriculum-ruby/main/group-capstone/images/catalog_of_my_things.png?token=GHSAT0AAAAAABRJEX7ME5LXSARMQJQ766XAYU2GOQA)
 
 
 ## Demo video link
@@ -21,7 +21,7 @@
 
 ## To get a local copy run the following steps:
 - Open your terminal or command line
-- Run "git clone [link](https://github.com/iLynette/catalog_of_things)
+- Run git clone [link](https://github.com/iLynette/catalog_of_things)
 - Open the folder with your code editor
 - Create a branch to work on
 
