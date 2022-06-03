@@ -36,7 +36,7 @@ module GenreMusic
     else
       albums.each do |music|
         puts
-        puts "Album name: #{music.name}"
+        puts "Album genre: #{music.name}"
         puts "publish year: #{music.publish_date}"
         puts "Available on spotify: #{music.on_spotify}"
         puts "Archive state: #{music.archived}"
