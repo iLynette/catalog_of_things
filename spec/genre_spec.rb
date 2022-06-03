@@ -3,8 +3,8 @@ require_relative '../item'
 
 describe Genre do
   before :all do
-    @genre = Genre.new 'hip-hop'
-    @item = Item.new 1998
+    @genre = Genre.new('hip-hop')
+    @item = Item.new(1998)
   end
 
   context 'Class Object' do
