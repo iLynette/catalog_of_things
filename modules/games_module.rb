@@ -1,4 +1,5 @@
 require 'json'
+require_relative '../game.rb'
 
 module GamesModule
     def load_games
