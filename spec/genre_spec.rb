@@ -6,4 +6,8 @@ describe Genre do
     @genre = Genre.new 'hip-hop'
     @item = Item.new 1998
   end
+
+  it 'Items should be empty' do
+    expect(@genre.items).to be_empty
+  end
 end
