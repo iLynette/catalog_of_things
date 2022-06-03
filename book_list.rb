@@ -1,10 +1,13 @@
 require './book'
 require './label'
+require './data/operations'
+require 'json'
 
 class Booklist
   def initialize()
     @books = []
     @labels = [{ title: 'Fiction', color: 'Black' }, { title: 'Non-fiction', color: 'Red' }]
+    load_books
   end
 
   def list_all_books
@@ -25,6 +28,7 @@ class Booklist
     print 'Publish date(yyyy-mm-dd): '
     date = gets.chomp
     puts 'Which label should the book have'
+    stored_books = get_data('books')
     list_labels
     label_index = gets.chomp.to_i
     book = Book.new(publisher, state_selection, date)
@@ -36,7 +40,14 @@ class Booklist
     desired_label[:ref] = label
     new_book = { publisher: publisher, cover_state: state_selection, publish_date: date, label: book.label.title }
     @books << new_book
+    book_data = { publisher: publisher, cover_state: state_selection, publish_date: date, label: book.label.title }
+    stored_books.push(book_data)
+    update_data('books', stored_books)
     puts 'Book was added successfully'
+  end
+
+  def load_books
+    @books = populate_books
   end
 
   def cover_selection(state)

@@ -8,8 +8,17 @@ require './genre'
 require './modules/music_storage'
 require './modules/genre_music'
 require './book_list'
+require './modules/authors_module'
+require './modules/games_module'
+require './operations/game_manager'
+require './operations/author_manager'
+require 'json'
+require './data/operations'
 
 class App
+  include GamesModule
+  include AuthorsModule
+
   attr_accessor :user_input
 
   include Storage
@@ -21,10 +30,10 @@ class App
     @books = Booklist.new
     @music_album = []
     @movies = []
-    @games = []
+    @games = load_games
     @genre = []
     @labels = []
-    @authors = []
+    @authors = load_authors
     @user_input = gets.chomp
 
     genre_store.each do |item|
@@ -33,20 +42,23 @@ class App
     end
   end
 
+  def save_data
+    add_game
+    create_games
+  end
+
   def prompt
     puts '
     1 List all books
     2 List all music albums
-    3 List all movies
-    4 List of games
-    5 List all genres
-    6 List all labels
-    7 List all authors
-    8 Add a book
-    9 Add a music album
-    10 Add a movie
-    11 Add a game
-    12 exit app
+    3 List of games
+    4 List all genres
+    5 List all labels
+    6 List all authors
+    7 Add a book
+    8 Add a music album
+    9 Add a game
+    10 exit app
     '
     puts ' '
     puts 'select an option: '
@@ -59,46 +71,42 @@ class App
     when '2'
       list_music_albums
     when '3'
-      list_movies
-    when '4'
       list_games
     end
   end
 
   def display_list_b(user_input)
     case user_input
-    when '5'
+    when '4'
       list_genres
-    when '6'
+    when '5'
       @books.list_labels
-    when '7'
-      list authors
+    when '6'
+      list_authors
     end
   end
 
   def create_things(user_input)
     case user_input
-    when '8'
+    when '7'
       @books.add_book
-    when '9'
+    when '8'
       create_album
-    when '10'
-      create_movie
-    when '11'
-      create_game
+    when '9'
+      save_data
     end
   end
 
   def run
     loop do
       case user_input
-      when '1', '2', '3', '4'
+      when '1', '2', '3'
         display_list_a(user_input)
-      when '5', '6', '7'
+      when '4', '5', '6'
         display_list_b(user_input)
-      when '8', '9', '10', '11'
+      when '7', '8', '9'
         create_things(user_input)
-      when '12'
+      when '10'
         puts 'Thank you for using the catalog of things app'
         exit(true)
       else
