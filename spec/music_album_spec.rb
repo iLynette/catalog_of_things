@@ -9,11 +9,15 @@ describe MusicAlbum do
     expect(@music_album).to be_instance_of MusicAlbum
   end
 
-    it 'Album genre should be rap' do
+  it 'Album genre should be rap' do
     expect(@music_album.name).to eql 'rap'
   end
 
-    it 'Album on spotify should be false' do
+  it 'Album on spotify should be false' do
     expect(@music_album.on_spotify).to be_falsy
+  end
+
+  it 'Album archived should be false' do
+    expect(@music_album.archived).to be_falsy
   end
 end
