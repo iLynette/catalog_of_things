@@ -9,7 +9,7 @@ module Storage
     else
       JSON.parse(File.read('./data/music.json')).each do |music|
         albums.push(MusicAlbum.new(music['album_name'], music['on_spotify'], music['publish_date'],
-                                   music['archived']))
+                                  music['archived']))
       end
     end
     albums
