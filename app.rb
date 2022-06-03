@@ -10,6 +10,8 @@ require './modules/authors_module'
 require './modules/games_module'
 require './operations/game_manager'
 require './operations/author_manager'
+require 'json'
+require './data/operations'
 
 class App
   include GamesModule
