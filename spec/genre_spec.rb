@@ -10,4 +10,8 @@ describe Genre do
   it 'Items should be empty' do
     expect(@genre.items).to be_empty
   end
+
+  it 'should return hip-hop' do
+    expect(@genre.name).to eql 'hip-hop'
+  end
 end
