@@ -95,7 +95,7 @@ module GenreMusic
 
   def create_album
     name, publish_date, on_spotify, archived = music_album_info
-    music = MusicAlbum.new(name, on_spotify, publish_date, archived)
+    music = MusicAlbum.new(name, publish_date, on_spotify, archived)
     music_genre = { album_name: music.name, on_spotify: music.on_spotify, publish_date: music.publish_date,
                     archived: music.archived }
     @music_album << music_genre
