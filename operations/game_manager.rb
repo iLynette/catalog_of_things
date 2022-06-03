@@ -19,7 +19,7 @@ def add_game
     puts 'Please write last played date [Only year]'
     last_played_at = gets.chomp
 
-    @games.push(Game.new(multiplayer, last_played_at, publish_date))
+    @games.push(Game.new(multiplayer, publish_date, last_played_at))
     puts 'Game is created'
 end
 
