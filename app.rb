@@ -6,10 +6,10 @@ require './label'
 require './music_album'
 require './genre'
 require './book_list'
-require './modules/authors_module.rb'
-require './modules/games_module.rb'
-require './operations/game_manager.rb'
-require './operations/author_manager.rb'
+require './modules/authors_module'
+require './modules/games_module'
+require './operations/game_manager'
+require './operations/author_manager'
 
 class App
   include GamesModule
