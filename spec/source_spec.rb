@@ -15,5 +15,9 @@ describe Source do
     it 'Item should be an empty' do
       expect(@source.item).to be_empty
     end
+
+    it 'should return HBO' do
+      expect(@source.name).to eql 'HBO'
+    end
   end
 end
