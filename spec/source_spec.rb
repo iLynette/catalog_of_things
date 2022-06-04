@@ -26,5 +26,14 @@ describe Source do
       @source.add_item(@item)
       expect(@source.items.length).to eq 1
     end
+
+    it 'An already existing item should not be added, length of item should still be equal to 1' do
+      @source.add_item(@item)
+      expect(@source.items.length).to eq 1
+    end
+
+    it 'item passed into array should be equal to the item being passed' do
+      expect(@item.source). to eql @source
+    end
   end
 end
