@@ -23,7 +23,7 @@ class Item
 
   def add_source=(source)
     @source = source
-    source.add_item(self) unless source.item.include? self
+    source.add_item(self) unless source.items.include? self
   end
 
   def author=(author)

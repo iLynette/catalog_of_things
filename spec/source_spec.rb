@@ -13,11 +13,18 @@ describe Source do
     end
 
     it 'Item should be an empty' do
-      expect(@source.item).to be_empty
+      expect(@source.items).to be_empty
     end
 
     it 'should return HBO' do
       expect(@source.name).to eql 'HBO'
+    end
+  end
+
+  context 'Add item to source' do
+    it 'Source item length should be == 1 after item is added' do
+      @source.add_item(@item)
+      expect(@source.items.length).to eq 1
     end
   end
 end

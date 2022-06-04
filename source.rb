@@ -1,15 +1,15 @@
 class Source
   attr_accessor :name
-  attr_reader :item
+  attr_reader :items
 
   def initialize(name)
     super()
     @name = name
-    @item = []
+    @items = []
   end
 
   def add_item(item)
-    @item << item unless @item.include? item
+    @items << item unless @items.include? item
     item.add_source = self
   end
 end
