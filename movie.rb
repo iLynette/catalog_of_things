@@ -1,4 +1,5 @@
 require_relative './item'
+require 'date'
 
 class Movie < Item
   attr_accessor :silet, :movie_name
@@ -6,7 +7,7 @@ class Movie < Item
   def initialize(movie_name, publish_date, silet = false, archived = false)
     super(publish_date, archived)
     @silet = silet
-    @movie_name = movie
+    @movie_name = movie_name
   end
 
   private
