@@ -37,4 +37,12 @@ module MovieSource
     end 
     movie_source
   end
+
+  def add_publish_date
+    print 'Publish date: '
+    date = gets.chomp
+    date
+  end
+
+  
 end
