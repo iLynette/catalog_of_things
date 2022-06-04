@@ -21,6 +21,11 @@ class Item
     @label = label
   end
 
+  def add_source=(source)
+    @source = source
+    source.add_item(self) unless source.item.include? self
+  end
+
   def author=(author)
     @author = author
     author.items << self unless author.items.include? self
