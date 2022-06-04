@@ -38,7 +38,6 @@ class App
     @sources = []
     @authors = load_authors
     @user_input = gets.chomp
-    puts 'afdasfa'
 
     genre_store.each do |item|
       genre = Genre.new(item[:name])
