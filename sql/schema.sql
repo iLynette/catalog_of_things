@@ -50,3 +50,20 @@ CREATE TABLE game (
     CONSTRAINT fkey_author FOREIGN KEY (author_id) REFERENCES author(id) ON DELETE CASCADE,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE source (
+  id INTEGER GENERATED ALWAYS AS IDENTITY,
+  movie_name VARCHAR(255),
+  PRIMARY KEY(id)
+)
+
+CREATE TABLE movie (
+  id INTEGER GENERATED ALWAYS AS IDENTITY,
+  movie_name VARCHAR(255),
+  publish_date DATE,
+  silet BOOLEAN,
+  approved BOOLEAN
+  source_id INTEGER,
+  CONSTRAINT fkey_source FOREIGN KEY (source_id) REFERENCES source(id) ON DELETE CASCADE
+  PRIMARY KEY(id)
+)
