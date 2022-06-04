@@ -4,5 +4,11 @@
     "cover_state" : "good",
     "publish_date" : "2030-2-3",
     "label" : "Non-fiction"
+  },
+  {
+    "publisher" : "ladybird",
+    "cover_state" : "good",
+    "publish_date" : "2001-12-12",
+    "label" : "Fiction"
   }
 ]

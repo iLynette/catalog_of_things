@@ -75,41 +75,47 @@ class App
       list_music_albums
     when '3'
       list_games
+    when '4'
+      list_movies
     end
   end
 
   def display_list_b(user_input)
     case user_input
-    when '4'
-      list_genres
     when '5'
-      @books.list_labels
+      list_genres
     when '6'
+      @books.list_labels
+    when '7'
       list_authors
     end
   end
 
   def create_things(user_input)
     case user_input
-    when '7'
-      @books.add_book
     when '8'
-      create_album
+      list_sources
     when '9'
+      @books.add_book
+    when '10'
+      create_album
+    when '11'
       save_data
+    when '12'
+      add_movie
     end
   end
 
   def run
     loop do
       case user_input
-      when '1', '2', '3'
+      when '1', '2', '3', '4'
         display_list_a(user_input)
-      when '4', '5', '6'
+      when '5', '6', '7'
         display_list_b(user_input)
-      when '7', '8', '9'
+      when '8', '9', '10', '11', '12'
         create_things(user_input)
-      when '10'
+      when '13'
         puts 'Thank you for using the catalog of things app'
         exit(true)
       else
