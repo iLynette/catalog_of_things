@@ -1,3 +1,5 @@
+require_relative "../movie"
+
 module MovieSource
   def source_store
     [
@@ -20,7 +22,7 @@ module MovieSource
     end
   end
 
-  def select_genre
+  def select_source
     puts 'Please select a movie source!'
     puts
     list_sources
@@ -28,21 +30,46 @@ module MovieSource
     num = gets.chomp
     indx = num.to_i - 1
     movie_source = nil
-    @sources.each_with_index do |genre, i|
+    @sources.each_with_index do |src, i|
       if indx == i
-        movie_source = genre_name
+        movie_source = src.name
       else
-        select_genre
+        movie_source
       end
     end 
     movie_source
   end
 
-  def add_publish_date
+  def movie_publish_date
     print 'Publish date: '
     date = gets.chomp
-    date
+    date.empty? ? movie_publish_date : date
   end
 
-  
+  def add_silet
+    print 'is it silet[Y/N]: '
+    silet = gets.chomp
+    %w[Y N].include?(silet.capitalize) ? silet.capitalize : silet
+  end
+
+  def add_movie_archived
+    print 'is the movie Archived?[Y/N]: '
+    archived = gets.chomp
+    %w[Y N].include?(archived.capitalize) ? archived.capitalize : archived
+  end
+
+  def movie_info
+    movie_name = select_source
+    publish_date = movie_publish_date
+    silet = add_silet == 'Y'
+    archived = add_movie_archived == 'Y' 
+    [movie_name, publish_date, silet, archived]
+  end
+
+  def create_movie
+    movie_name, publish_date, silet, archived = movie_info
+    movie = Movie.new(movie_name, publish_date, silet, archived)
+    @movies << movie
+    puts 'Movie successfully added'
+  end
 end

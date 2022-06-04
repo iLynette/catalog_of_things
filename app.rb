@@ -111,7 +111,7 @@ class App
     when '11'
       save_data
     when '12'
-      add_movie
+      create_movie
     end
   end
 
