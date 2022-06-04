@@ -41,7 +41,7 @@ module MovieSource
   end
 
   def movie_publish_date
-    print 'Publish date: '
+    print 'Publish date(eg. 2001): '
     date = gets.chomp
     date.empty? ? movie_publish_date : date
   end
