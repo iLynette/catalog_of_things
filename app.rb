@@ -9,20 +9,22 @@ require './modules/music_storage'
 require './modules/genre_music'
 require './book_list'
 require './modules/authors_module'
+require './modules/movie_source'
 require './modules/games_module'
 require './operations/game_manager'
 require './operations/author_manager'
 require 'json'
 require './data/operations'
+require './source'
 
 class App
-  include GamesModule
-  include AuthorsModule
-
   attr_accessor :user_input
 
+  include GamesModule
+  include AuthorsModule
   include Storage
   include GenreMusic
+  include MovieSource
 
   def initialize
     puts 'Welcome to the Catalog of Things App!'
@@ -33,18 +35,34 @@ class App
     @games = load_games
     @genre = []
     @labels = []
+    @sources = []
     @authors = load_authors
     @user_input = gets.chomp
+    puts 'afdasfa'
 
     genre_store.each do |item|
       genre = Genre.new(item[:name])
       @genre << genre
+    end
+
+
+    source_store.each do |src|
+      source = Source.new(src[:name])
+      @sources << source
     end
   end
 
   def save_data
     add_game
     create_games
+  end
+
+  def list_sources
+    puts 'Available movie sources'
+    @sources.each_with_index do |src, i|
+      pos = i + 1
+      puts "#{pos}) #{src.name}"
+    end
   end
 
   def prompt
