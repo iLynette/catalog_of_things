@@ -44,8 +44,7 @@ class App
       genre = Genre.new(item[:name])
       @genre << genre
     end
-
-
+    
     source_store.each do |src|
       source = Source.new(src[:name])
       @sources << source
@@ -55,14 +54,6 @@ class App
   def save_data
     add_game
     create_games
-  end
-
-  def list_sources
-    puts 'Available movie sources'
-    @sources.each_with_index do |src, i|
-      pos = i + 1
-      puts "#{pos}) #{src.name}"
-    end
   end
 
   def prompt
