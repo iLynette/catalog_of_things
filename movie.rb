@@ -1,3 +1,5 @@
+require_relative './item'
+
 class Movie < Item
   attr_accessor :silet, :movie_name
 
