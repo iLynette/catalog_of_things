@@ -11,5 +11,9 @@ describe Source do
     it 'source should be an instance of class Source' do
       expect(@source).to be_instance_of Source
     end
+
+    it 'Item should be an empty' do
+      expect(@source.item).to be_empty
+    end
   end
 end
