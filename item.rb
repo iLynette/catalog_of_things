@@ -1,6 +1,6 @@
 class Item
   attr_accessor :publish_date
-  attr_reader :archived, :id, :genre, :label, :author
+  attr_reader :archived, :id, :genre, :label, :author, :source
 
   # rubocop:disable Style/OptionalBooleanParameter
   def initialize(publish_date, archived = false, id = rand(1..100_000))

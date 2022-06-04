@@ -33,7 +33,7 @@ describe Source do
     end
 
     it 'item passed into array should be equal to the item being passed' do
-      expect(@item.source). to eql @source
+      expect(@item.source).to eql @source
     end
   end
 end
