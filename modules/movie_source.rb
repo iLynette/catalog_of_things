@@ -70,14 +70,15 @@ module MovieSource
     movie_name, publish_date, silet, archived = movie_info
     movie = Movie.new(movie_name, publish_date, silet, archived)
     @movies << movie
-    puts 'Movie successfully added'
+    write_movies(@movies)
   end
 
   def list_movies
-    if @movies.empty? 
+    movies = read_movie
+    if movies.empty? 
       puts 'Please Add movies first'
     else 
-      @movies.each do |movie|
+      movies.each do |movie|
         puts "Movie source: #{movie.movie_name}"
         puts "Publish year: #{movie.publish_date}"
         puts "Movie silet: #{movie.silet}"

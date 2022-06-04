@@ -16,6 +16,7 @@ require './operations/author_manager'
 require 'json'
 require './data/operations'
 require './source'
+require "./modules/movie_storage"
 
 class App
   attr_accessor :user_input
@@ -25,6 +26,7 @@ class App
   include Storage
   include GenreMusic
   include MovieSource
+  include MovieStorage
 
   def initialize
     puts 'Welcome to the Catalog of Things App!'
