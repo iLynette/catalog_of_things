@@ -14,6 +14,6 @@ describe Movie do
   end
 
   it 'should return Morbius as movie name' do
-    expect(@movie.movie_name). to eql 'Morbius'
+    expect(@movie.movie_name).to eql 'Morbius'
   end
 end

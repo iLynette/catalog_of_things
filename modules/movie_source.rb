@@ -1,16 +1,16 @@
-require_relative "../movie"
+require_relative '../movie'
 
 module MovieSource
   def source_store
     [
-      {name: 'HBO-MAX'},
-      {name: 'Netflix'},
-      {name: 'Disney+'},
-      {name: 'Hulu'},
-      {name: 'Paramount+'},
-      {name: 'FX'},
-      {name: 'Colombia'},
-      {name: 'ShowMax'}
+      { name: 'HBO-MAX' },
+      { name: 'Netflix' },
+      { name: 'Disney+' },
+      { name: 'Hulu' },
+      { name: 'Paramount+' },
+      { name: 'FX' },
+      { name: 'Colombia' },
+      { name: 'ShowMax' }
     ]
   end
 
@@ -36,7 +36,7 @@ module MovieSource
       else
         movie_source
       end
-    end 
+    end
     movie_source
   end
 
@@ -62,7 +62,7 @@ module MovieSource
     movie_name = select_source
     publish_date = movie_publish_date
     silet = add_silet == 'Y'
-    archived = add_movie_archived == 'Y' 
+    archived = add_movie_archived == 'Y'
     [movie_name, publish_date, silet, archived]
   end
 
@@ -75,9 +75,9 @@ module MovieSource
 
   def list_movies
     movies = read_movie
-    if movies.empty? 
+    if movies.empty?
       puts 'Please Add movies first'
-    else 
+    else
       movies.each do |movie|
         puts "Movie source: #{movie.movie_name}"
         puts "Publish year: #{movie.publish_date}"

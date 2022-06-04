@@ -1,4 +1,5 @@
-require_relative '../movie.rb'
+require 'json'
+require_relative '../movie'
 
 module MovieStorage
   def read_movie
@@ -17,11 +18,11 @@ module MovieStorage
     movies_temp = []
     movies.each do |movie|
       movies_temp.push({
-        movie_name: movie.movie_name,
-        publish_date: movie.publish_date,
-        silet: movie.silet,
-        archived: movie.archived
-      })
+                         movie_name: movie.movie_name,
+                         publish_date: movie.publish_date,
+                         silet: movie.silet,
+                         archived: movie.archived
+                       })
     end
     File.write('./data/movies.json', JSON.generate(movies_temp).to_s)
     puts 'Movie successfully added'

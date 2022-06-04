@@ -16,7 +16,7 @@ require './operations/author_manager'
 require 'json'
 require './data/operations'
 require './source'
-require "./modules/movie_storage"
+require './modules/movie_storage'
 
 class App
   attr_accessor :user_input
@@ -45,7 +45,7 @@ class App
       genre = Genre.new(item[:name])
       @genre << genre
     end
-    
+
     source_store.each do |src|
       source = Source.new(src[:name])
       @sources << source
