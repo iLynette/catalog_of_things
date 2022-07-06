@@ -6,7 +6,7 @@
 > We designed a console app that would let users add books, games and music albums as well as list the aforementioned items. Everything was based on a descriptive UML class diagram. The data is saved in JSON files, but we've also created a database schema of the same.
 
 ## UML Diagram
-![UML](https://raw.githubusercontent.com/microverseinc/curriculum-ruby/main/group-capstone/images/catalog_of_my_things.png?token=GHSAT0AAAAAABRJEX7ME5LXSARMQJQ766XAYU2GOQA)
+![UML](https://github.com/microverseinc/curriculum-ruby/blob/main/group-capstone/images/catalog_of_my_things.png?raw=true)
 
 
 ## Demo video link
